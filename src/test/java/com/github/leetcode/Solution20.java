@@ -1,4 +1,4 @@
-package com.github.other;
+package com.github.leetcode;
 
 import java.util.Stack;
 
@@ -8,7 +8,7 @@ import java.util.Stack;
  * @author ZEALER
  * @date: 2019年1月19日
  */
-public class Solution {
+public class Solution20 {
 	public boolean isValid(String s) {
 		Stack<Character> stack = new Stack<>();
 		

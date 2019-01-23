@@ -1,6 +1,11 @@
 package com.github.linked;
 
-
+/**
+ * 链表
+ * 
+ * @author ZEALER
+ * @date: 2019年1月20日
+ */
 public class LinkedList<E> {
 	
 	private class Node {
@@ -65,7 +70,7 @@ public class LinkedList<E> {
             throw new IllegalArgumentException("Add failed. Illegal index.");
     	
     	Node prev = dummyHead;
-    	for (int i = 0; i < index; i++) {
+    	for (int i = 0; i < index; i++) { 
     		prev = prev.next; // 原 index 位置的前一个 Node 
     	}
     	
@@ -177,7 +182,7 @@ public class LinkedList<E> {
             throw new IllegalArgumentException("Add failed. Illegal index.");
     	
     	Node prev = dummyHead;
-    	for (int i = 0; i < index; i++) {
+    	for (int i = 0; i < index; i++) { // 从头开始遍历
     		prev = prev.next; // 原 index 位置的前一个 Node 
     	}
     	

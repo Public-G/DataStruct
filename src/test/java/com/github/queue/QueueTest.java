@@ -53,13 +53,19 @@ public class QueueTest {
 		
 		int opCount = 1000000;
 
-        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
-        double time1 = testQueue(arrayQueue, opCount);
-        System.out.println("ArrayQueue, time: " + time1 + " s"); // ArrayQueue, time: 608.414003465 s
+//        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
+//        double time1 = testQueue(arrayQueue, opCount);
+//        System.out.println("ArrayQueue, time: " + time1 + " s"); // opCount = 1000000, ArrayQueue, time: 608.414003465 s
 
+		
+		// opCount = 1000000时，LoopQueue和LinkedListQueue对比，它们受环境影响。
         LoopQueue<Integer> loopQueue = new LoopQueue<>();
         double time2 = testQueue(loopQueue, opCount);
-        System.out.println("LoopQueue, time: " + time2 + " s"); // LoopQueue, time: 0.118408817 s
+        System.out.println("LoopQueue, time: " + time2 + " s"); // LoopQueue, time: 0.106649569 s
+        
+        LoopQueue<Integer> linkedListQueue = new LoopQueue<>();
+        double time3 = testQueue(linkedListQueue, opCount);
+        System.out.println("LinkedListQueue, time: " + time3 + " s"); // LinkedListQueue, time: 0.088688676 s
 	}
 
 }
