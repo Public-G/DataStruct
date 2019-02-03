@@ -32,12 +32,13 @@ public class LinkedList<E> {
         }
 	}
 	
-	private Node dummyHead; // 虚拟头节点
+	// 虚拟头节点（哨兵，解决的是国家之间的边界问题。同理，这里说的哨兵也是解决“边界问题”的，不直接参与业务逻辑。）
+	private Node dummyHead; 
     private int size;
     
     public LinkedList(){
         this.dummyHead = new Node();
-        this.size = 0;
+        this.size = 0;        
     }
     
     /**

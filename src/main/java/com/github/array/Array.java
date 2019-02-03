@@ -29,6 +29,13 @@ public class Array<E> {
 		this(10);
 	}
 
+	public Array(E[] arr) {
+		this.data = (E[]) new Object[arr.length];
+		for (int i = 0; i < arr.length; i++)
+			this.data[i] = arr[i];
+		this.size = arr.length;
+	}
+
 	/**
 	 * 在index索引的位置插入一个新元素e
 	 * 
@@ -186,7 +193,7 @@ public class Array<E> {
 		this.data[size] = null; // 加快垃圾回收
 
 		// 数组中的元素为数组长度的 1/4，且数组长度不为1时进行缩容
-		if (this.size == (this.data.length / 4) && (data.length / 2) != 0) { // 防止复杂度的震荡（在临界值（数组已满）处添加元素后又删除元素）
+		if (this.size == (this.data.length / 4) && (data.length / 2) != 0) { // 防止复杂度的震荡（在临界值（数组已满）处添加元素后又删除元素，会造成不断的扩容和缩容）
 			resize(this.data.length / 2);
 		}
 
@@ -235,6 +242,15 @@ public class Array<E> {
 		}
 
 		this.data[index] = e;
+	}
+
+	public void swap(int i, int j) {
+		if (i < 0 || i >= size || j < 0 || j >= size)
+			throw new IllegalArgumentException("Index is illegal.");
+
+		E temp = data[i];
+		data[i] = data[j];
+		data[j] = temp;
 	}
 
 	/**

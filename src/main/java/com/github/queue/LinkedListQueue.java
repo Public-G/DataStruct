@@ -68,7 +68,7 @@ public class LinkedListQueue<E> implements Queue<E> {
 	@Override
 	public E dequeue() {
 		if (isEmpty()) {
-			
+			throw new IllegalArgumentException("Cannot dequeue from an empty queue.");
 		}
 		
 		Node retNode = this.head;
@@ -86,7 +86,7 @@ public class LinkedListQueue<E> implements Queue<E> {
 	@Override
 	public E getFront() {
 		if (isEmpty()) {
-					
+			throw new IllegalArgumentException("Queue is empty.");
 		}
 		
 		return this.head.e;

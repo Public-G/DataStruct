@@ -55,7 +55,7 @@ public class QueueTest {
 
 //        ArrayQueue<Integer> arrayQueue = new ArrayQueue<>();
 //        double time1 = testQueue(arrayQueue, opCount);
-//        System.out.println("ArrayQueue, time: " + time1 + " s"); // opCount = 1000000, ArrayQueue, time: 608.414003465 s
+//        System.out.println("ArrayQueue, time: " + time1 + " s "); // opCount = 1000000, ArrayQueue, time: 608.414003465 s
 
 		
 		// opCount = 1000000时，LoopQueue和LinkedListQueue对比，它们受环境影响。
